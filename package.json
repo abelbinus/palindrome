@@ -1,6 +1,6 @@
 {
   "name": "palindrome",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "gypfile": true,
   "description": "Know if a string is a palindrome using Node.js with C++ native implementation",
   "main": "hello.js",
