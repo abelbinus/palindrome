@@ -18,12 +18,8 @@ void isPalindrome(const Nan::FunctionCallbackInfo<v8::Value>& info) {
       start++;
       end--;
     } else if (startSpace || endSpace) {
-      if (startSpace) {
-        end++;
-      }
-      if (endSpace) {
-        start--;
-      }
+      startSpace && end++;
+      endSpace && start--;
     } else {
       isPal = false;
     }
@@ -35,8 +31,10 @@ void isPalindrome(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 }
 
 void Init(v8::Local<v8::Object> exports) {
-  exports->Set(Nan::New("isPalindrome").ToLocalChecked(),
-               Nan::New<v8::FunctionTemplate>(isPalindrome)->GetFunction());
+  exports->Set(
+    Nan::New("isPalindrome").ToLocalChecked(),
+    Nan::New<v8::FunctionTemplate>(isPalindrome)->GetFunction()
+  );
 }
 
 NODE_MODULE(isPalindrome, Init)
