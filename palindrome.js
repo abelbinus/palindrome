@@ -2,8 +2,8 @@
 var addon = require('bindings')('palindrome');
 
 console.log(addon.isPalindrome('a bz a')); //false
-// console.log(addon.isPalindrome('a santa at nasa')); //true
-// console.log(addon.isPalindrome('a but tuba')); //true
+console.log(addon.isPalindrome('a santa at nasa')); //true
+console.log(addon.isPalindrome('a but tuba')); //true
 console.log(addon.isPalindrome('aaa')); //true
 console.log(addon.isPalindrome('aba')); //true
 console.log(addon.isPalindrome('abb')); //false

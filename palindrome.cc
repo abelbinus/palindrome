@@ -18,8 +18,8 @@ void isPalindrome(const Nan::FunctionCallbackInfo<v8::Value>& info) {
       start++;
       end--;
     } else if (startSpace || endSpace) {
-      startSpace && end++;
-      endSpace && start--;
+      startSpace && start++;
+      endSpace && end--;
     } else {
       isPal = false;
     }
