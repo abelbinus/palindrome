@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "gypfile": true,
   "description": "Know if a string is a palindrome using Node.js with C++ native implementation",
-  "main": "hello.js",
+  "main": "palindrome.js",
   "scripts": {
     "start": "node-gyp build && node palindrome.js"
   },

@@ -1,7 +1,9 @@
 #include <nan.h>
 
-void isPalindrome(const Nan::FunctionCallbackInfo<v8::Value>& info) {
-  v8::String::Utf8Value sentence(info[0]->ToString());
+using namespace v8;
+
+void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
+  String::Utf8Value sentence(info[0]->ToString());
   std::string str = std::string(*sentence);
   int len = str.length();
   int half = len / 2;
@@ -30,11 +32,8 @@ void isPalindrome(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   info.GetReturnValue().Set(isPal);
 }
 
-void Init(v8::Local<v8::Object> exports) {
-  exports->Set(
-    Nan::New("isPalindrome").ToLocalChecked(),
-    Nan::New<v8::FunctionTemplate>(isPalindrome)->GetFunction()
-  );
+void Init(Local<Object> exports, Local<Object> module) {
+  NODE_SET_METHOD(module, "exports", IsPalindrome);
 }
 
-NODE_MODULE(isPalindrome, Init)
+NODE_MODULE(addon, Init)
