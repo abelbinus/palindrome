@@ -3,19 +3,20 @@
 using namespace v8;
 
 void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
-  Local<v8::String> s = info[0]->ToString();
-  String::Utf8Value arg0(s);
-  char* str = *arg0;
-  int len = s->Length();
+  v8::String::Utf8Value arg0(info[0]);
+  char *str = *arg0;
+  int len = 57;
   int half = len / 2;
   int start = 0;
   int end = len - 1;
   int space = 32;
   bool isPal = true;
+  bool startSpace;
+  bool endSpace;
 
   while (half > 0 && isPal) {
-    bool startSpace = str[start] == space;
-    bool endSpace = str[end] == space;
+    startSpace = str[start] == space;
+    endSpace = str[end] == space;
 
     if (str[start] == str[end]) {
       start++;
