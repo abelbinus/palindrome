@@ -3,7 +3,7 @@
 using namespace v8;
 
 void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
-  v8::String::Utf8Value arg0(info[0]);
+  Nan::Utf8String arg0(info[0]);
   char *str = *arg0;
   int len = 57;
   int half = len / 2;
