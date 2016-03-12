@@ -3,9 +3,10 @@
 using namespace v8;
 
 void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
-  String::Utf8Value sentence(info[0]->ToString());
-  std::string str = std::string(*sentence);
-  int len = str.length();
+  Local<v8::String> s = info[0]->ToString();
+  String::Utf8Value arg0(s);
+  char* str = *arg0;
+  int len = s->Length();
   int half = len / 2;
   int start = 0;
   int end = len - 1;
@@ -13,10 +14,10 @@ void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
   bool isPal = true;
 
   while (half > 0 && isPal) {
-    bool startSpace = str.at(start) == space;
-    bool endSpace = str.at(end) == space;
+    bool startSpace = str[start] == space;
+    bool endSpace = str[end] == space;
 
-    if (str.at(start) == str.at(end)) {
+    if (str[start] == str[end]) {
       start++;
       end--;
     } else if (startSpace || endSpace) {
