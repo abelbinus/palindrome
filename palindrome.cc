@@ -5,7 +5,7 @@ using namespace v8;
 void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
   Nan::Utf8String arg0(info[0]);
   char *str = *arg0;
-  size_t len = strlen(str);
+  size_t len = arg0.length();
   int half = len / 2;
   int start = 0;
   int end = len - 1;
