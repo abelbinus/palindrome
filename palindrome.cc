@@ -10,13 +10,14 @@ void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
   int start = 0;
   int end = len - 1;
   int space = 32;
+  int comma = 44;
   bool isPal = true;
   bool startSpace;
   bool endSpace;
 
   while (half > 0 && isPal) {
-    startSpace = str[start] == space;
-    endSpace = str[end] == space;
+    startSpace = str[start] == space || str[start] == comma;
+    endSpace = str[end] == space || str[end] == comma;
 
     if (str[start] == str[end]) {
       start++;
