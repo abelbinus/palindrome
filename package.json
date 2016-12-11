@@ -20,7 +20,7 @@
   "homepage": "https://github.com/zzarcon/palindrome#readme",
   "dependencies": {
     "bindings": "^1.2.1",
-    "nan": "^2.2.0"
+    "nan": "^2.3.4"
   },
   "devDependencies": {
     "mocha": "^3.2.0",
