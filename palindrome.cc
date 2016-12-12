@@ -16,8 +16,8 @@ void IsPalindrome(const FunctionCallbackInfo<Value>& info) {
   bool endSpace;
 
   while (half > 0 && isPal) {
-    startSpace = str[start] == space || str[start] == comma;
-    endSpace = str[end] == space || str[end] == comma;
+    startSpace = str[start] == space || str[start] == comma;
+    endSpace = str[end] == space || str[end] == comma;
 
     if (str[start] == str[end]) {
       start++;
